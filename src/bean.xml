@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+  <bean id="userDao" class="com.dao.impl.UserDaoImpl" scope="singleton" />
+  
+  <bean id="userService" class="com.service.impl.UserServiceImpl" scope="singleton">
+    <property name="userDao" ref="userDao"/>
+  </bean>
+  
+  <bean id="userController" class="com.controller.UserController" scope="singleton">
+    <property name="userService" ref="userService"/>
+  </bean>
+  
+</beans>

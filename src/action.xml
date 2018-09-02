@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<controller>
+  <!-- 配置class为bean文件中bean标签的name的原因: 因为对象都是工厂(getBean方法)创建的, 
+   - 而在dispatchServlet中
+   - 只是加载了action.xml文件, 而获取对象需要用到工厂的getBean方法, 所以class配置成了
+   - bean标签中的name属性, 实际反射创建对象的方式是在getBean方法中利用反射机制创建的。
+   -->
+  <action name="show.action" class="userController" method="showUsers" />
+  <action name="create.action" class="userController" method="createUser" />
+</controller>
